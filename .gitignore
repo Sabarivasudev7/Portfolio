@@ -1,0 +1,11 @@
+
+.metadata/
+*/ .metadata/
+.settings/
+bin/
+target/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+*.log

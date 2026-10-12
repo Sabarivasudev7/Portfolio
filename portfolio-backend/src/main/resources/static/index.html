@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabari Vasudev | Full Stack Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <h2>Sabari<span class="highlight">.dev</span></h2>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><button class="nav-btn nav-btn-outline" onclick="openGit()">Git</button></li>
+      <li><button class="nav-btn nav-btn-primary" onclick="openResumePopup()">Resume</button></li>
+    </ul>
+  </nav>
+  
+  <!-- Resume Popup Modal -->
+  <div id="resume-popup" class="popup-overlay hidden">
+    <div class="popup-content glow-card">
+      <h3>Resume Options</h3>
+      <p>Choose an option below to view or download my resume.</p>
+      <div class="popup-buttons">
+        <button class="btn-glow" onclick="viewResume()">View PDF</button>
+        <button class="btn-glow btn-outline" onclick="downloadResume()">Download PDF</button>
+      </div>
+      <button class="close-popup-btn" onclick="closeResumePopup()">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <h3 class="subtitle">Welcome to my portfolio</h3>
+    <h1>Hi, I'm <span class="highlight">Sabari Vasudev</span></h1>
+    <h2>Software Developer</h2>
+    <p>A dedicated Java developer with a strong focus on building scalable, high‑performance applications. My expertise lies in designing and implementing robust REST APIs using Spring Boot, seamlessly integrated with Oracle databases for reliable data management. I specialize in crafting secure, maintainable backend architectures while also delivering modern, responsive web interfaces that enhance user experience. With a passion for clean code, problem‑solving, and continuous learning, I bring a full‑stack perspective that combines solid backend engineering with intuitive frontend solutions.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn-glow">View My Projects</a>
+      <a href="#contact" class="btn-glow btn-outline">Get In Touch</a>
+      <button class="btn-glow" onclick="openAboutPage()">More About Me</button>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section-container">
+    <h2 class="section-title">My Skills</h2>
+    <div id="skills-grid">
+      <!-- Loaded dynamically via JavaScript -->
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section-container">
+    <h2 class="section-title">Featured Projects</h2>
+    <div id="projects-grid" class="grid-container"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section-container">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-wrapper">
+      <div class="glow-card">
+        <form id="contact-form">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-glow full-width">Send Message</button>
+          <p id="form-status" class="status-msg"></p>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="glow-card info-card">
+          <i data-lucide="mail" class="icon-cyan"></i>
+          <div><h4>Email</h4><p>sabarivasudev.k@gmail.com</p></div>
+        </div>
+        
+        <div class="glow-card info-card">
+          <i data-lucide="map-pin" class="icon-cyan"></i>
+          <div><h4>Location</h4><p>Coimbatore, Tamil Nadu, India</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Chat Bubble -->
+  <div class="chat-widget">
+    <div id="chat-popup" class="glow-card chat-popup hidden">
+      <div class="chat-header">
+        <span class="highlight">AI Assistant</span>
+        <i data-lucide="x" id="close-chat" class="close-icon"></i>
+      </div>
+      <p>Feel free to send a message using the contact form!</p>
+    </div>
+    <button id="toggle-chat" class="btn-glow chat-btn">
+      <i data-lucide="message-square"></i>
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
